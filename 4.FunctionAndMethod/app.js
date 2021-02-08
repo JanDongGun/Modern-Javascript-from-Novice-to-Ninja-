@@ -14,3 +14,4 @@
 // speak();
 
 // // hoisting work with  function declaration not function expression
+//
