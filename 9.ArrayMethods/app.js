@@ -28,3 +28,15 @@
 // });
 
 // console.log(mapUsers, users);
+
+// Sort method
+
+const users = [
+  { name: "gon", age: 21 },
+  { name: "tran", age: 20 },
+  { name: "gontan", age: 18 },
+  { name: "trangon", age: 19 },
+];
+
+users.sort((a, b) => b.age - a.age);
+console.log(users);
