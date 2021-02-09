@@ -1,4 +1,4 @@
-const correctAnswers = ["B", "B", "B", "B"];
+const correctAnswers = ["B", "B", "B", "B", "A"];
 const form = document.querySelector(".quiz-form");
 const resultDiv = document.querySelector(".result");
 const resultNumber = resultDiv.querySelector("span");
@@ -13,6 +13,7 @@ form.addEventListener("submit", (e) => {
     form.q2.value,
     form.q3.value,
     form.q4.value,
+    form.q5.value,
   ];
 
   userAnswers.forEach((answer, index) => {
@@ -23,4 +24,5 @@ form.addEventListener("submit", (e) => {
 
   resultDiv.classList.remove("d-none");
   resultNumber.textContent = `${score}%`;
+  window.scrollTo(0, 0);
 });
