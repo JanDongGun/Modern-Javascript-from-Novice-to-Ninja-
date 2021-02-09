@@ -18,11 +18,21 @@ form.addEventListener("submit", (e) => {
 
   userAnswers.forEach((answer, index) => {
     if (answer === correctAnswers[index]) {
-      score += 25;
+      score += 20;
     }
   });
 
-  resultDiv.classList.remove("d-none");
-  resultNumber.textContent = `${score}%`;
   window.scrollTo(0, 0);
+  resultDiv.classList.remove("d-none");
+
+  let output = 0;
+
+  const timer = setInterval(() => {
+    resultNumber.textContent = `${output}%`;
+    if (output === score) {
+      clearInterval(timer);
+    } else {
+      output++;
+    }
+  }, 10);
 });
