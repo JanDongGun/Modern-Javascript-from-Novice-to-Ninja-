@@ -9,10 +9,55 @@
       integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
       crossorigin="anonymous"
     />
+
     <link rel="stylesheet" href="style.css" />
     <title>Todo List</title>
   </head>
   <body>
+    <div class="container">
+      <header class="text-center text-light my-4">
+        <h1 class="mb-4">Todo List</h1>
+        <form class="search">
+          <input
+            type="text"
+            class="form-control m-auto"
+            name="search"
+            placeholder="Search todos"
+          />
+        </form>
+      </header>
+
+      <ul class="list-group todos mx-auto text-light">
+        <li
+          class="list-group-item d-flex justify-content-between align-items-center"
+        >
+          <span>Play mariokart</span>
+          <i class="far fa-trash-alt delete"></i>
+        </li>
+        <li
+          class="list-group-item d-flex justify-content-between align-items-center"
+        >
+          <span>Defeat ganon in zelda</span>
+          <i class="far fa-trash-alt delete"></i>
+        </li>
+        <li
+          class="list-group-item d-flex justify-content-between align-items-center"
+        >
+          <span>Make a veggie pie</span>
+          <i class="far fa-trash-alt delete"></i>
+        </li>
+      </ul>
+
+      <form class="add text-center my-4">
+        <label for="" class="text-light">Add a new todo...</label>
+        <input type="text" name="add" class="form-control m-auto" />
+      </form>
+    </div>
+
+    <script
+      src="https://kit.fontawesome.com/1280773129.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="./app.js"></script>
   </body>
 </html>
