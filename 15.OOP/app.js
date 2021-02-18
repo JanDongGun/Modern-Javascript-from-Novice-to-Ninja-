@@ -26,6 +26,17 @@ class User {
   }
 }
 
-const userOne = new User("gon", "trannguyendonggon@gmail.com");
+class Admin extends User {
+  deleteUser(user) {
+    users = users.filter((u) => u.name != user.name);
+  }
+}
 
-userOne.login().incScore().incScore().logout();
+const userOne = new User("gon", "trannguyendonggon@gmail.com");
+const userTwo = new User("tran", "trannguyendonggon@gmail.com");
+const userThree = new Admin("admin", "trannguyendonggon@gmail.com");
+
+let users = [userOne, userTwo, userThree];
+console.log(users);
+userThree.deleteUser(userTwo);
+console.log(users);
