@@ -45,6 +45,17 @@ User.prototype.login = function () {
   console.log(`${this.name} has logged in`);
 };
 
+function Admin(name, email, title) {
+  User.call(this, name, email);
+  this.title = title;
+}
+
+Admin.prototype = Object.create(User.prototype);
+
+Admin.prototype.deleteUser = function () {
+  // delete user
+};
+
 const userOne = new User("gon", "trannguyendonggon@gmail.com");
 const userTwo = new User("tran", "trannguyendonggon@gmail.com");
 //const userThree = new Admin("admin", "trannguyendonggon@gmail.com", "ninja");
