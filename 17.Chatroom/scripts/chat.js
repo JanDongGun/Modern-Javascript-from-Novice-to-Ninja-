@@ -19,16 +19,29 @@ class Chatroom {
       room: this.room,
       created_at: firebase.firestore.Timestamp.fromDate(now),
     };
-
+    // save the chat documents
     const response = await this.chats.add(chat);
     return response;
   }
 
-  // save the chat documents
+  getChats(callback) {
+    this.chats.onSnapshot((snapshot) => {
+      snapshot.docChanges().forEach((change) => {
+        if (change.type === "added") {
+          // update ui
+          callback(change.doc.data());
+        }
+      });
+    });
+  }
 }
 
 const chatroom = new Chatroom("gamming", "gon");
-chatroom
-  .addChat("hello everyone")
-  .then(() => console.log("chat added"))
-  .catch((err) => console.log(err));
+// chatroom
+//   .addChat("hello everyone")
+//   .then(() => console.log("chat added"))
+//   .catch((err) => console.log(err));
+
+chatroom.getChats((data) => {
+  console.log(data);
+});
