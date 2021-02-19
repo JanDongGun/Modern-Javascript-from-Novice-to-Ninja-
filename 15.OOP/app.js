@@ -39,14 +39,15 @@
 function User(name, email) {
   this.name = name;
   this.email = email;
-  this.login = function () {
-    console.log(`${this.name} has logged in`);
-  };
 }
+
+User.prototype.login = function () {
+  console.log(`${this.name} has logged in`);
+};
 
 const userOne = new User("gon", "trannguyendonggon@gmail.com");
 const userTwo = new User("tran", "trannguyendonggon@gmail.com");
 //const userThree = new Admin("admin", "trannguyendonggon@gmail.com", "ninja");
 
 //let users = [userOne, userTwo, userThree];
-console.log(userTwo.login);
+userTwo.login();
