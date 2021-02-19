@@ -25,18 +25,21 @@ class Chatroom {
   }
 
   getChats(callback) {
-    this.chats.onSnapshot((snapshot) => {
-      snapshot.docChanges().forEach((change) => {
-        if (change.type === "added") {
-          // update ui
-          callback(change.doc.data());
-        }
+    this.chats
+      .where("room", "==", this.room)
+      .orderBy("created_at")
+      .onSnapshot((snapshot) => {
+        snapshot.docChanges().forEach((change) => {
+          if (change.type === "added") {
+            // update ui
+            callback(change.doc.data());
+          }
+        });
       });
-    });
   }
 }
 
-const chatroom = new Chatroom("gamming", "gon");
+const chatroom = new Chatroom("general", "gon");
 // chatroom
 //   .addChat("hello everyone")
 //   .then(() => console.log("chat added"))
