@@ -50,22 +50,3 @@ class Chatroom {
     }
   }
 }
-
-const chatroom = new Chatroom("general", "gon");
-// chatroom
-//   .addChat("hello everyone")
-//   .then(() => console.log("chat added"))
-//   .catch((err) => console.log(err));
-
-chatroom.getChats((data) => {
-  console.log(data);
-});
-
-setTimeout(() => {
-  chatroom.updateRoom("gaming");
-  chatroom.updateName("trangon");
-  chatroom.getChats((data) => {
-    console.log(data);
-  });
-  chatroom.addChat("gon ne tran");
-}, 3000);
