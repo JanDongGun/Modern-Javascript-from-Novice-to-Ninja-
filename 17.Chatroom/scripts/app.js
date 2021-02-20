@@ -3,6 +3,7 @@ const chatList = document.querySelector(".chat-list");
 const newChat = document.querySelector(".new-chat");
 const newName = document.querySelector(".new-name");
 const updateMssg = document.querySelector(".update-mssg");
+const rooms = document.querySelector(".chat-rooms");
 // add a new chat
 newChat.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -28,6 +29,17 @@ newName.addEventListener("submit", (e) => {
   setTimeout(() => {
     updateMssg.innerText = "";
   }, 2000);
+});
+
+// update chat room
+rooms.addEventListener("click", (e) => {
+  if (e.target.tagName === "BUTTON") {
+    chatUI.clear();
+    chatroom.updateRoom(e.target.getAttribute("id"));
+    chatroom.getChats((data) => {
+      chatUI.render(data);
+    });
+  }
 });
 
 // check local storage
