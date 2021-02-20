@@ -17,3 +17,12 @@
   outline: none !important;
   box-shadow: none !important;
 }
+
+.username {
+  font-weight: bold;
+}
+
+.time {
+  font-size: 0.7em;
+  color: #999;
+}
