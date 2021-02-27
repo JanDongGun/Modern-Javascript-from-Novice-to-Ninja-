@@ -1,3 +1,4 @@
+import "./styles/tabs.css";
 class Tabs {
   constructor(container) {
     this.container = container;
