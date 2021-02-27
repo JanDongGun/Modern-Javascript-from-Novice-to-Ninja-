@@ -6,4 +6,8 @@ const users = [
   { name: "peach", premium: false },
 ];
 
+users.forEach((user) => {
+  console.log(user.name);
+});
+
 export default users;
