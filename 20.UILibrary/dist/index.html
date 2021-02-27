@@ -4,9 +4,29 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>UI Library</title>
+    <style>
+      body {
+        font-size: 1.5em;
+      }
+      .container {
+        margin: 40px;
+        margin-top: 60px;
+      }
+    </style>
   </head>
   <body>
+    <div class="container">
+      <!-- tooltip -->
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum beatae
+        fuga repellendus cupiditate laborum architecto eos
+        <span class="tooltip" data-message="I'm a tooltip">consectetur</span>
+        impedit iusto vero deleniti placeat ducimus blanditiis magnam molestias
+        sint, id veritatis minima.
+      </p>
+    </div>
+
     <script src="./assets/bundle.js"></script>
   </body>
 </html>
